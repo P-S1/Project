@@ -12,6 +12,7 @@ class Motorbike : public LightVehicle {
 
     // Redefine display_information() to include additional details specific to Motorbike
         void display_information();
+        int get_engine_capacity();
 };
 
 #endif // MOTORBIKE_H

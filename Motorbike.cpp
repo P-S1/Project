@@ -16,3 +16,6 @@ void Motorbike::display_information() {
     LightVehicle::display_information();
     cout << "Engine Capacity: " << engine_capacity << " cc" << endl;
 }
+int Motorbike::get_engine_capacity(){
+    return engine_capacity;
+}

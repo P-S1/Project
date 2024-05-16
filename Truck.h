@@ -12,6 +12,8 @@ class Truck : public HeavyVehicle {
         Truck(string make, string model, int price, string transmission_type, string fuel_type,int load_capacity);
 
         void display_information();
+        int get_load_capacity();
+        
 };
 
 #endif // TRUCK_H

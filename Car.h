@@ -14,6 +14,8 @@ class Car : public LightVehicle {
         Car(string make, string model, int price, string transmission_type, string fuel_type, int numOfSeats, string body_type);
         // Redefine display_information() to include additional details specific to Car
         void display_information();
+        string get_body_type();
+        int get_numOfSeats();
     
 };
 

@@ -15,4 +15,6 @@ void Truck::display_information() {
     HeavyVehicle::display_information();
     cout << "Load Capacity: " << load_capacity << " tons" << endl;
 }
-
+int Truck::get_load_capacity(){
+    return load_capacity;
+}

@@ -13,6 +13,7 @@ class Vehicle {
         Vehicle();
         Vehicle(string make, string model, float price);
         virtual void display_information();
+        string get_make();
         float get_price();
         void set_price(float price);
 };
