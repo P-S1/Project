@@ -16,5 +16,6 @@ class Vehicle {
         string get_make();
         float get_price();
         void set_price(float price);
+        string get_model();
 };
 #endif

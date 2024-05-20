@@ -5,21 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <limits>
-
-void displayMenu() {
-    std::cout << "\n--- Vehicle Filter Menu ---\n";
-    std::cout << "1. Set Make\n";
-    std::cout << "2. Set Min Price\n";
-    std::cout << "3. Set Max Price\n";
-    std::cout << "4. Set Body Type\n";
-    std::cout << "5. Set Number of Seats\n";
-    std::cout << "6. Set Transmission Type\n";
-    std::cout << "7. Set Fuel Type\n";
-    std::cout << "8. Set Engine Capacity\n";
-    std::cout << "9. Set Load Capacity\n";
-    std::cout << "10. Apply Filter\n";
-    std::cout << "0. Exit\n";
-}
+#include "Menu.h"
 
 int main() {
     // Create some vehicles
@@ -30,77 +16,71 @@ int main() {
 
     std::vector<Vehicle*> vehicles = { &car1, &car2, &bike1, &truck1 };
 
+    std::vector<std::string> makes = { "Toyota", "Honda", "Yamaha", "Volvo", "Mercedes" };
+    std::vector<std::string> bodyTypes = { "Sedan", "SUV", "Truck", "Motorbike" };
+    std::vector<std::string> transmissionTypes = { "Automatic", "Manual" };
+    std::vector<std::string> fuelTypes = { "Gasoline", "Diesel", "Electric" };
+    std::vector<std::string> PriceRange = { "under 25000", "25000-35000", "35000-45000", "above 45000"};
+
+
+
     VehicleFilter filter;
+    Menu menu;
     int choice;
-    std::string inputString;
     float minPrice;
     float maxPrice;
     int inputInt;
 
     do {
-        displayMenu();
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
-
-        // Clear input buffer
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        menu.displayMenu();
+        choice = menu.getChoice(0, 10);
+ 
 
         switch (choice) {
             case 1:
-                std::cout << "Enter Make: ";
-                std::getline(std::cin, inputString);
-                filter.setMake(inputString);
+                filter.setMake(menu.selectOption("Select Make", makes));
                 break;
             case 2:
-                std::cout << "Enter Min Price and Max Price: ";
-                std::cin >> minPrice >> maxPrice;
-                filter.setPriceRange(minPrice,maxPrice);
+                std::cout << "Enter your MIN Price: ";
+                std::cin >> minPrice;
+                std::cout << "\nEnter your MAX Price: ";
+                std::cin >> maxPrice;
+                filter.setPriceRange(minPrice, maxPrice);
                 break;
             case 4:
-                std::cout << "Enter Body Type: ";
-                std::getline(std::cin, inputString);
-                filter.setBodyType(inputString);
+                filter.setBodyType(menu.selectOption("Select Body Type", bodyTypes));
                 break;
             case 5:
-                std::cout << "Enter Number of Seats: ";
-                std::cin >> inputInt;
-                filter.setNumSeats(inputInt);
+                filter.setNumSeats(menu.getIntInput("Enter Number of Seats: "));
                 break;
             case 6:
-                std::cout << "Enter Transmission Type: ";
-                std::getline(std::cin, inputString);
-                filter.setTransmissionType(inputString);
+                filter.setTransmissionType(menu.selectOption("Select Transmission Type", transmissionTypes));
                 break;
             case 7:
-                std::cout << "Enter Fuel Type: ";
-                std::getline(std::cin, inputString);
-                filter.setFuelType(inputString);
+                filter.setFuelType(menu.selectOption("Select Fuel Type", fuelTypes));
                 break;
             case 8:
-                std::cout << "Enter Engine Capacity: ";
-                std::cin >> inputInt;
-                filter.setEngineCapacity(inputInt);
+                filter.setEngineCapacity(menu.getIntInput("Enter Engine Capacity: "));
                 break;
             case 9:
-                std::cout << "Enter Load Capacity: ";
-                std::cin >> minPrice;
-                filter.setLoadCapacity(minPrice);
+                filter.setLoadCapacity(menu.getFloatInput("Enter Load Capacity: "));
                 break;
-            case 10: {
+            case 10:
+{
                 std::vector<Vehicle*> filteredVehicles = filter.filterVehicles(vehicles);
                 if (filteredVehicles.empty()) {
                     std::cout << "No vehicle match" << std::endl;
                 } else {
-                    std::cout << "\nFiltered Vehicles:\n";
+                    std::cout << "\n----Filtered Vehicles----\n";
                     for (const auto& vehicle : filteredVehicles) {
                         vehicle->display_information();
-                        std::cout << "-----------------\n";
+                        std::cout << "-------------------------\n";
                     }
                 }
                 break;
             }
             case 0:
-                std::cout << "Exiting program...\n";
+                std::cout << "Exiting...\n";
                 break;
             default:
                 std::cout << "Invalid choice. Please try again.\n";

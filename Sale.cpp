@@ -1,9 +1,15 @@
 #include "Sale.h"
 #include <iostream>
+#include "Customer.h"
+#include "Vehicle.h"
 
-Sale::Sale(const std::string& transaction_id, const std::string& date)
-    : Service(transaction_id, date) {}
 
-void Sale::processService() {
-    std::cout << "Processing sale transaction ID: " << getTransactionId() << " on date: " << getDate() << std::endl;
+Sale::Sale(Customer customer, Vehicle* vehicle) 
+    : customer(customer), vehicle(vehicle) {}
+
+void Sale::displayTransaction() {
+    std::cout << "Sale Transaction:\n";
+    std::cout << "Customer: " << customer.getName() << " (" << customer.getPhoneNumber() << ")\n";
+    std::cout << "Vehicle: " << vehicle->get_make() << " " << vehicle->get_model() << "\n";
+    std::cout << "Price: " << vehicle->get_price() <<" AUD"<< "\n";
 }

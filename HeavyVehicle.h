@@ -6,7 +6,7 @@
 #include <string>
 
 class HeavyVehicle : public Vehicle {
-    private:
+    protected:
         int load_capacity;
     public:
     HeavyVehicle();

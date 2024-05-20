@@ -5,7 +5,6 @@ using namespace std;
 void VehicleFilter::setMake(const std::string& make) {
     this->make = make;
 }
-
 void VehicleFilter::setPriceRange(float minPrice, float maxPrice) {
     this->minPrice = minPrice;
     this->maxPrice = maxPrice;

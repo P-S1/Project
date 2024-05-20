@@ -1,16 +1,10 @@
+#include <iostream>
 #include "Customer.h"
 
 
-Customer::Customer(const std::string& name, const std::string& contact_info)
 
-    : name(name), contact_info(contact_info) {}
+Customer::Customer(std::string name, std::string phoneNumber) 
+    : name(name), phoneNumber(phoneNumber) {}
 
-std::string Customer::getName() const {
-
-    return name;
-}
-
-std::string Customer::getContactInfo() const {
-    
-    return contact_info;
-}
+std::string Customer::getName() { return name; }
+std::string Customer::getPhoneNumber() { return phoneNumber; }

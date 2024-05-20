@@ -12,9 +12,9 @@ Vehicle::Vehicle(string make, string model, float price)
 }
 
 void Vehicle::display_information() {
-    cout << "Make: " << make << endl;
-    cout << "Model: " << model << endl;
-    cout << "Price: $" << price << endl;
+    cout << "|  Make: " << make << endl;
+    cout << "|  Model: " << model << endl;
+    cout << "|  Price: " << price <<" AUD" << endl;
 }
 
 float Vehicle::get_price() {
@@ -26,4 +26,7 @@ void Vehicle::set_price(float price) {
 }
 string Vehicle::get_make(){
     return make;
+}
+string Vehicle::get_model(){
+    return model;
 }

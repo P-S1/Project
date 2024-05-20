@@ -14,7 +14,7 @@ Motorbike::Motorbike(string make, string model, int price, string transmission_t
 
 void Motorbike::display_information() {
     LightVehicle::display_information();
-    cout << "Engine Capacity: " << engine_capacity << " cc" << endl;
+    cout << "|  Engine Capacity: " << engine_capacity << " cc" << endl;
 }
 int Motorbike::get_engine_capacity(){
     return engine_capacity;

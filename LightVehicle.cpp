@@ -13,8 +13,8 @@ LightVehicle::LightVehicle(string make, string model, int price, string transmis
 
 void LightVehicle::display_information() {
     Vehicle::display_information();
-    cout << "Transmission Type: " << transmission_type << endl;
-    cout << "Fuel Type: " << fuel_type << endl;
+    cout << "|  Transmission Type: " << transmission_type << endl;
+    cout << "|  Fuel Type: " << fuel_type << endl;
 }
 string LightVehicle::get_fuel_type(){
     return fuel_type;

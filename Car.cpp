@@ -15,8 +15,8 @@ Car::Car(string make, string model, int price, string transmission_type, string 
 
 void Car::display_information() {
     LightVehicle::display_information();
-    cout << "Number of Seats: " << numOfSeats << endl;
-    cout << "Body Type: " << body_type << endl;
+    cout << "|  Number of Seats: " << numOfSeats << endl;
+    cout << "|  Body Type: " << body_type << endl;
 }
 
 string Car::get_body_type(){

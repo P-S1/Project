@@ -7,13 +7,13 @@ Truck::Truck() {
 
 Truck::Truck(string make, string model, int price, string transmission_type, string fuel_type,
              int load_capacity)
-    : HeavyVehicle(make, model, price, load_capacity), load_capacity(load_capacity) {
+    : HeavyVehicle(make, model, price, load_capacity) {
     // Parameterized constructor
 }
 
 void Truck::display_information() {
     HeavyVehicle::display_information();
-    cout << "Load Capacity: " << load_capacity << " tons" << endl;
+    cout << "|  Load Capacity: " << load_capacity << " tons" << endl;
 }
 int Truck::get_load_capacity(){
     return load_capacity;

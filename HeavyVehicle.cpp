@@ -11,7 +11,7 @@ HeavyVehicle::HeavyVehicle(string make, string model, int price, int load_capaci
     // Parameterized constructor
 }
 
-void HeavyVehicle::display_information() {
-    Vehicle::display_information();
-    cout << "Load Capacity: " << load_capacity << " tons" << endl;
-}
+void HeavyVehicle::display_information() {}
+//     Vehicle::display_information();
+//     cout << "Load Capacity: " << load_capacity << " tons" << endl;
+// }
