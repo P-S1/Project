@@ -16,7 +16,7 @@ class Car : public LightVehicle {
         void display_information();
         string get_body_type();
         int get_numOfSeats();
-    
+
 };
 
 #endif // CAR_H

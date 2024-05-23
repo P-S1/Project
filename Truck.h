@@ -12,6 +12,8 @@ class Truck : public HeavyVehicle {
 
         void display_information();
         int get_load_capacity();
+
+
         
 };
 

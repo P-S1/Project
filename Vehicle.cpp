@@ -15,7 +15,9 @@ void Vehicle::display_information() {
     cout << "|  Make: " << make << endl;
     cout << "|  Model: " << model << endl;
     cout << "|  Price: " << price <<" AUD" << endl;
-}
+
+    }
+
 
 float Vehicle::get_price() {
     return price;

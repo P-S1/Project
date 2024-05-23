@@ -110,8 +110,8 @@ void Menu::displayVehicleTypeMenu() {
     std::cout << "| 1. Car               |\n";
     std::cout << "| 2. Motorcycle        |\n";
     std::cout << "| 3. Truck             |\n";
-    std::cout << "| 0. Exit               |\n";
-    std::cout << "|___________________________|\n";
+    std::cout << "| 0. Exit              |\n";
+    std::cout << "|______________________|\n";
 }
 
 

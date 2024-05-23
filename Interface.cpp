@@ -60,6 +60,7 @@ void Interface::run() {
                                     vehicle->display_information();
                                     std::cout << "-------------------------\n";
                                 }
+                                
 
                                 int transactionChoice;
                                 std::cout << "Would you like to rent or sale? (1 for rent, 2 for sale): ";

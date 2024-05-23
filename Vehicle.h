@@ -12,10 +12,12 @@ class Vehicle {
     public:
         Vehicle();
         Vehicle(string make, string model, float price);
-        virtual void display_information();
         string get_make();
         float get_price();
         void set_price(float price);
         string get_model();
+
+        virtual void display_information();
+
 };
 #endif

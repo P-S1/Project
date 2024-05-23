@@ -12,6 +12,6 @@ HeavyVehicle::HeavyVehicle(string make, string model, int price, int load_capaci
 }
 
 void HeavyVehicle::display_information() {}
-//     Vehicle::display_information();
+//    Vehicle::display_information();
 //     cout << "Load Capacity: " << load_capacity << " tons" << endl;
 // }
